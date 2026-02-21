@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="qr-card" aria-label="QR generator card">
+    <h1>GENERATE QR CODE</h1>
+
+    <input
+      id="qr-text"
+      class="text-input"
+      type="text"
+      placeholder="Like share and subscribe"
+      autocomplete="off"
+      aria-label="Text for QR code"
+    >
+
+    <div class="size-row">
+      <label for="qr-size">Select Size:</label>
+      <select id="qr-size" aria-label="QR code size">
+        <option value="200">200x200</option>
+        <option value="300">300x300</option>
+        <option value="400">400x400</option>
+        <option value="500" selected>500x500</option>
+      </select>
+    </div>
+
+    <section id="qr-preview" class="qr-preview" aria-live="polite">
+      <img id="qr-image" alt="Generated QR code" hidden>
+      <p id="qr-placeholder">Your QR code appears here</p>
+    </section>
+
+    <p id="status-message" class="status-message" aria-live="polite"></p>
+
+    <div class="button-row">
+      <button id="generate-btn" type="button">Generate</button>
+      <button id="download-btn" type="button" disabled>Download</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
